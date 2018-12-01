@@ -1,0 +1,19 @@
+{
+  "name": "md-syntax",
+  "version": "1.0.0",
+  "description": "markdown 语法说明",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "keywords": [
+    "rxliuli",
+    "markdown",
+    "md"
+  ],
+  "author": "rxliuli",
+  "license": "ISC",
+  "dependencies": {
+    "marked": "^0.5.2"
+  }
+}
