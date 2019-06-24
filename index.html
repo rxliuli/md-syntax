@@ -1,0 +1,1347 @@
+<style>@import 'night/mermaid.dark.css';
+@import 'night/codeblock.dark.css';
+@import 'night/sourcemode.dark.css';
+
+:root {
+  --bg-color: #363b40;
+  --side-bar-bg-color: #2e3033;
+  --text-color: #b8bfc6;
+  --code-block-bg-color: inherit; //#f8f8f8;
+
+  --item-hover-bg-color: #0a0d16;
+  --control-text-color: #b7b7b7;
+  --control-text-hover-color: #eee;
+  --window-border: 1px dashed #9b9b9b;
+
+  --active-file-bg-color: rgb(34, 34, 34);
+  --active-file-border-color: #8d8df0;
+
+  --primary-color: #a3d5fe;
+
+  --active-file-text-color: white;
+  --item-hover-bg-color: #70717d;
+  --item-hover-text-color: white;
+  --primary-color: #6dc1e7;
+}
+
+html {
+  font-size: 16px;
+}
+
+html,
+body {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  background: #363b40;
+  background: var(--bg-color);
+  fill: currentColor;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#write {
+  max-width: 914px;
+  padding-top: 20px;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+  color: #b8bfc6;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+  background: #4b535a;
+}
+
+.popover.bottom > .arrow:after {
+  border-bottom-color: #4b535a;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-style: normal;
+  line-height: 1.625rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+hr {
+  height: 2px;
+  border: 0;
+  margin: 50px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lucida Grande', 'Corbal', sans-serif;
+  font-weight: normal;
+  clear: both;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 0;
+  color: #dedede;
+}
+
+h1 {
+  font-size: 2.5rem;
+  /* 36px */
+  line-height: 2.75rem;
+  /* 40px */
+  margin-bottom: 1.5rem;
+  /* 24px */
+  letter-spacing: -1.5px;
+}
+
+h2 {
+  font-size: 1.63rem;
+  /* 24px */
+  line-height: 1.875rem;
+  /* 30px */
+  margin-bottom: 1.5rem;
+  /* 24px */
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.17rem;
+  /* 18px */
+  line-height: 1.5rem;
+  /* 24px */
+  margin-bottom: 1.5rem;
+  /* 24px */
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.12rem;
+  /* 16px */
+  line-height: 1.375rem;
+  /* 22px */
+  margin-bottom: 1.5rem;
+  /* 24px */
+  color: white;
+}
+
+h5 {
+  font-size: 0.97rem;
+  /* 16px */
+  line-height: 1.25rem;
+  /* 22px */
+  margin-bottom: 1.5rem;
+  /* 24px */
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 0.93rem;
+  /* 16px */
+  line-height: 1rem;
+  /* 16px */
+  margin-bottom: 0.75rem;
+  color: white;
+}
+
+@media (min-width: 980px) {
+  h3.md-focus:before,
+  h4.md-focus:before,
+  h5.md-focus:before,
+  h6.md-focus:before {
+    color: #ddd;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    position: absolute;
+    left: -1.642857143rem;
+    top: 0.357142857rem;
+    float: left;
+    font-size: 9px;
+    padding-left: 2px;
+    padding-right: 2px;
+    vertical-align: bottom;
+    font-weight: normal;
+    line-height: normal;
+  }
+
+  h3.md-focus:before {
+    content: 'h3';
+  }
+
+  h4.md-focus:before {
+    content: 'h4';
+  }
+
+  h5.md-focus:before {
+    content: 'h5';
+    top: 0px;
+  }
+
+  h6.md-focus:before {
+    content: 'h6';
+    top: 0px;
+  }
+}
+
+a {
+  text-decoration: none;
+  outline: 0;
+}
+
+a:hover {
+  outline: 0;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+sup.md-footnote {
+  background-color: #555;
+  color: #ddd;
+}
+
+p {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  /* 24px */
+}
+
+audio:not([controls]) {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+::-moz-selection {
+  background: #4a89dc;
+  color: #fff;
+  text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+  background: #4a89dc;
+  color: #fff;
+  text-shadow: none;
+}
+
+ul,
+ol {
+  padding: 0 0 0 1.875rem;
+  /* 30px */
+}
+
+ul {
+  list-style: square;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+  font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+  font-style: italic;
+}
+
+blockquote {
+  padding-left: 1.875rem;
+  margin: 0 0 1.875rem 1.875rem;
+  border-left: solid 2px #474d54;
+  padding-left: 30px;
+  margin-top: 35px;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+  background: rgba(0, 0, 0, 0.05);
+  font-size: 0.875rem;
+  font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+}
+
+pre.md-fences {
+  padding: 10px 30px;
+  margin-bottom: 20px;
+  border: 1px solid;
+}
+
+.md-fences .code-tooltip {
+  bottom: -3.2em;
+}
+
+code,
+kbd,
+tt,
+var {
+  padding: 2px 5px;
+}
+
+table {
+  max-width: 100%;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 5px 10px;
+  vertical-align: top;
+}
+
+a {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+hr {
+  background: #474d54;
+  /* variable */
+}
+
+#write > *:first-child {
+  margin-top: 40px;
+}
+
+h1 {
+  margin-top: 2em;
+}
+
+a {
+  color: #e0e0e0;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #fff;
+}
+
+.md-inline-math script {
+  color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+  color: #dedede;
+  /* variable */
+}
+
+mark {
+  background: #d3d40e;
+}
+
+blockquote {
+  color: #9da2a6;
+}
+
+table a {
+  color: #dedede;
+  /* variable */
+}
+
+th,
+td {
+  border: solid 1px #474d54;
+  /* variable */
+}
+
+.task-list {
+  padding-left: 0;
+}
+
+.task-list-item {
+  padding-left: 1.25rem;
+}
+
+.task-list-item input {
+  top: 0.1875rem;
+}
+
+.task-list-item input:before {
+  content: '';
+  display: inline-block;
+  width: 0.875rem;
+  height: 0.875rem;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px solid #b8bfc6;
+  background-color: #363b40;
+  margin-top: -0.4375rem;
+}
+
+.task-list-item input:checked:before,
+.task-list-item input[checked]:before {
+  content: '\221A';
+  /*◘*/
+  font-size: 0.625rem;
+  line-height: 0.625rem;
+  color: #dedede;
+}
+
+.CodeMirror-gutters {
+  background: transparent;
+  border-right: 1px solid transparent;
+}
+
+/** quick open **/
+.auto-suggest-container {
+  border: 0px;
+  background-color: #525c65;
+}
+
+#typora-quick-open {
+  background-color: #525c65;
+}
+
+#typora-quick-open input {
+  background-color: #525c65;
+  border: 0;
+  border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+  background-color: inherit;
+  color: inherit;
+}
+
+.typora-quick-open-item.active {
+  background-color: #4d8bdb;
+  color: white;
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+#write pre.md-meta-block {
+  border-bottom: 1px dashed #ccc;
+  background: transparent;
+  padding-bottom: 0.6em;
+  line-height: 1.6em;
+}
+
+.btn,
+.btn .btn-default {
+  background: transparent;
+  color: #b8bfc6;
+}
+
+.md-table-edit {
+  border-top: 1px solid gray;
+  background-color: #363b40;
+}
+
+.popover-title {
+  background: transparent;
+}
+
+.md-image > .md-meta {
+  color: #bbbbbb;
+  background: transparent;
+}
+
+.md-expand.md-image > .md-meta {
+  color: #ddd;
+}
+
+#write > h3:before,
+#write > h4:before,
+#write > h5:before,
+#write > h6:before {
+  border: none;
+  border-radius: 0px;
+  color: #888;
+  text-decoration: underline;
+  left: -1.4rem;
+  top: 0.2rem;
+}
+
+#write > h3.md-focus:before {
+  top: 2px;
+}
+
+#write > h4.md-focus:before {
+  top: 2px;
+}
+
+.md-toc-item {
+  color: #a8c2dc;
+}
+
+#write div.md-toc-tooltip {
+  background-color: #363b40;
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+  color: white;
+  background: black;
+}
+
+#toc-dropmenu {
+  background: rgba(50, 54, 59, 0.93);
+  border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+  background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+  top: 2px;
+}
+
+#typora-sidebar {
+  box-shadow: none;
+  border-right: 1px dashed;
+  border-right: none;
+}
+
+.sidebar-tabs {
+  border-bottom: 0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+  border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+  color: inherit;
+}
+
+.outline-item:hover {
+  border-color: #363b40;
+  background-color: #363b40;
+  color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+  color: #8c8e92;
+  display: inline;
+}
+
+.md-comment {
+  color: #5a95e3;
+  opacity: 1;
+}
+
+.md-inline-math g,
+.md-inline-math svg {
+  stroke: #b8bfc6 !important;
+  fill: #b8bfc6 !important;
+}
+
+[md-inline='inline_math'] {
+  color: #9cb2e9;
+}
+
+#math-inline-preview .md-arrow:after {
+  background: black;
+}
+
+.modal-content {
+  background: var(--bg-color);
+  border: 0;
+}
+
+.modal-title {
+  font-size: 1.5em;
+}
+
+.modal-content input {
+  background-color: rgba(26, 21, 21, 0.51);
+  color: white;
+}
+
+.modal-content .input-group-addon {
+  background-color: rgba(0, 0, 0, 0.17);
+  color: white;
+}
+
+.modal-backdrop {
+  background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+  border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+  background-color: #4b535a;
+}
+
+.form-inline .input-group .input-group-addon {
+  color: white;
+}
+
+#md-searchpanel {
+  border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu {
+  background-color: #42464a;
+}
+
+.context-menu.dropdown-menu .divider {
+  background-color: #777777;
+}
+
+footer {
+  color: inherit;
+}
+
+@media (max-width: 1000px) {
+  footer {
+    border-top: none;
+  }
+  footer:hover {
+    color: inherit;
+  }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+  background-color: #555;
+  color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+  background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+  color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+  background: inherit;
+  border: 0;
+  border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+  background: inherit;
+  border: 1px grey solid;
+}
+
+.megamenu-menu-panel .btn:hover,
+.megamenu-menu-panel .btn:focus,
+.megamenu-menu-panel .btn.focus {
+  color: white;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+  color: inherit;
+  background-color: #2f353a;
+  text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+  color: inherit;
+  font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+  color: white;
+}
+
+.modal-footer .btn-default,
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+  border: 1px solid;
+  border-color: transparent;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  color: white;
+  border: 1px solid #ddd;
+  background-color: inherit;
+}
+
+.modal-header {
+  border-bottom: 0;
+}
+
+.modal-footer {
+  border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+  background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+  color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+  border: 1px solid #eee;
+  background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+  background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+  width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+  background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+  background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+  background-color: #4182c4;
+}
+
+#top-titlebar,
+#top-titlebar * {
+  color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.show-word-count #footer-word-count {
+  background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+  color: #eee;
+  background: #333333;
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+  color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .task-list-item:not(.md-focus-container) > input {
+  opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container) {
+  color: #686868;
+}
+
+.on-focus-mode
+  .md-fences.md-focus
+  .CodeMirror-code
+  > *:not(.CodeMirror-activeline)
+  *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+  color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+  color: #fff;
+}
+
+.on-focus-mode
+  #typora-source
+  .CodeMirror-code
+  > *:not(.CodeMirror-activeline)
+  * {
+  color: #686868 !important;
+}
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+  border: 1px solid #ddd;
+  margin-left: -30px;
+}
+
+.md-diagram-panel-error {
+  color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+  color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+  background: inherit;
+  color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+  color: white;
+}
+
+#sidebar-files-menu {
+  border: solid 1px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+  background-color: var(--bg-color);
+}
+
+.file-list-item {
+  border-bottom: none;
+}
+
+.file-list-item-summary {
+  opacity: 1;
+}
+
+.file-list-item.active:first-child {
+  border-top: none;
+}
+
+.sidebar-footer {
+  border-top: 1px solid #555;
+}
+
+.file-node-background {
+  height: 32px;
+}
+
+.file-library-node.active > .file-node-content,
+.file-list-item.active {
+  color: white;
+  color: var(--active-file-text-color);
+}
+
+.file-library-node.active > .file-node-background {
+  background-color: rgb(34, 34, 34);
+  background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+  background-color: rgb(34, 34, 34);
+  background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+  background-color: black;
+  color: #eee;
+}
+
+#write {
+  cursor: -webkit-image-set(
+        url('night/cursor.png') 1x,
+        url('night/cursor@2x.png') 2x
+      )
+      8 8,
+    auto;
+}
+</style><h1 id="markdown-">Markdown 语法说明</h1>
+<!-- TOC -->
+
+<ul>
+<li><a href="#markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E">Markdown 语法说明</a><ul>
+<li><a href="#%E6%A6%82%E8%BF%B0">概述</a><ul>
+<li><a href="#%E5%AE%97%E6%97%A8">宗旨</a></li>
+<li><a href="#%E5%85%BC%E5%AE%B9-html">兼容 HTML</a></li>
+<li><a href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2">特殊字符自动转换</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8C%BA%E5%9D%97%E5%85%83%E7%B4%A0">区块元素</a><ul>
+<li><a href="#%E6%AE%B5%E8%90%BD%E5%92%8C%E6%8D%A2%E8%A1%8C">段落和换行</a></li>
+<li><a href="#%E6%A0%87%E9%A2%98">标题</a></li>
+<li><a href="#%E5%8C%BA%E5%9D%97%E5%BC%95%E7%94%A8-blockquotes">区块引用 Blockquotes</a></li>
+<li><a href="#%E5%88%97%E8%A1%A8">列表</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E5%8C%BA%E5%9D%97">代码区块</a></li>
+<li><a href="#%E5%88%86%E9%9A%94%E7%BA%BF">分隔线</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8C%BA%E6%AE%B5%E5%85%83%E7%B4%A0">区段元素</a><ul>
+<li><a href="#%E9%93%BE%E6%8E%A5">链接</a></li>
+<li><a href="#%E5%BC%BA%E8%B0%83">强调</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4">删除</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
+<li><a href="#%E5%9B%BE%E7%89%87">图片</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B6%E5%AE%83">其它</a><ul>
+<li><a href="#%E8%87%AA%E5%8A%A8%E9%93%BE%E6%8E%A5">自动链接</a></li>
+<li><a href="#%E5%8F%8D%E6%96%9C%E6%9D%A0">反斜杠</a></li>
+</ul>
+</li>
+<li><a href="#markdown-%E5%85%8D%E8%B4%B9%E7%BC%96%E8%BE%91%E5%99%A8">Markdown 免费编辑器</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+<hr>
+<h2 id="-">概述</h2>
+<blockquote>
+<p>该说明引用自 <a href="https://www.appinn.com/markdown/">https://www.appinn.com/markdown/</a>，吾辈添加/修复了一些内容。</p>
+</blockquote>
+<h3 id="-">宗旨</h3>
+<p>Markdown 的目标是实现「易读易写」。</p>
+<p>可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a>、<a href="http://www.aaronsw.com/2002/atx/">atx</a>、<a href="http://textism.com/tools/textile/">Textile</a>、<a href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>、<a href="http://www.triptico.com/software/grutatxt.html">Grutatext</a> 和 <a href="http://ettext.taint.org/doc/">EtText</a>，而最大灵感来源其实是纯文本电子邮件的格式。</p>
+<p>总之， Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。比如：在文字两旁加上星号，看起来就像<strong>强调</strong>。Markdown 的列表看起来，嗯，就是列表。Markdown 的区块引用看起来就真的像是引用一段文字，就像你曾在电子邮件中见过的那样。</p>
+<h3 id="-html">兼容 HTML</h3>
+<p>Markdown 语法的目标是：成为一种适用于网络的<em>书写</em>语言。</p>
+<p>Markdown 不是想要取代 HTML，甚至也没有要和它相近，它的语法种类很少，只对应 HTML 标记的一小部分。Markdown 的构想<em>不是</em>要使得 HTML 文档更容易书写。在我看来， HTML 已经很容易写了。Markdown 的理念是，能让文档更容易读、写和随意改。HTML 是一种<em>发布</em>的格式，Markdown 是一种<em>书写</em>的格式。就这样，Markdown 的格式语法只涵盖纯文本可以涵盖的范围。</p>
+<p>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。</p>
+<p>要制约的只有一些 HTML 区块元素――比如 <code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;p&gt;</code> 等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能用制表符或空格来缩进。Markdown 的生成器有足够智能，不会在 HTML 区块标签外加上不必要的 <code>&lt;p&gt;</code> 标签。</p>
+<p>例子如下，在 Markdown 文件里加上一段 HTML 表格：</p>
+<pre><code>这是一个普通段落。
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Foo&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+这是另一个普通段落。</code></pre><p>请注意，在 HTML 区块标签间的 Markdown 格式语法将不会被处理。比如，你在 HTML 区块内使用 Markdown 样式的<code>*强调*</code>会没有效果。</p>
+<p>HTML 的区段（行内）标签如 <code>&lt;span&gt;</code>、<code>&lt;cite&gt;</code>、<code>&lt;del&gt;</code> 可以在 Markdown 的段落、列表或是标题里随意使用。依照个人习惯，甚至可以不用 Markdown 格式，而直接采用 HTML 标签来格式化。举例说明：如果比较喜欢 HTML 的 <code>&lt;a&gt;</code> 或 <code>&lt;img&gt;</code> 标签，可以直接使用这些标签，而不用 Markdown 提供的链接或是图像标签语法。</p>
+<p>和处在 HTML 区块标签间不同，Markdown 语法在 HTML 区段标签间是有效的。</p>
+<h3 id="-">特殊字符自动转换</h3>
+<p>在 HTML 文件中，有两个字符需要特殊处理： <code>&lt;</code> 和 <code>&amp;</code> 。 <code>&lt;</code> 符号用于起始标签，<code>&amp;</code> 符号则用于标记 HTML 实体，如果你只是想要显示这些字符的原型，你必须要使用实体的形式，像是 <code>&amp;lt;</code> 和 <code>&amp;amp;</code>。</p>
+<p><code>&amp;</code> 字符尤其让网络文档编写者受折磨，如果你要打「<code>AT&amp;T</code>」 ，你必须要写成「<code>AT&amp;amp;T</code>」。而网址中的 <code>&amp;</code> 字符也要转换。比如你要链接到：</p>
+<pre><code>http://images.google.com/images?num=30&amp;q=larry+bird</code></pre><p>你必须要把网址转换写为：</p>
+<pre><code>http://images.google.com/images?num=30&amp;amp;q=larry+bird</code></pre><p>才能放到链接标签的 <code>href</code> 属性里。不用说也知道这很容易忽略，这也可能是 HTML 标准检验所检查到的错误中，数量最多的。</p>
+<p>Markdown 让你可以自然地书写字符，需要转换的由它来处理好了。如果你使用的 <code>&amp;</code> 字符是 HTML 字符实体的一部分，它会保留原状，否则它会被转换成 <code>&amp;amp</code>;。</p>
+<p>所以你如果要在文档中插入一个版权符号 <code>©</code>，你可以这样写：</p>
+<pre><code>&amp;copy;</code></pre><p>Markdown 会保留它不动。而若你写：</p>
+<pre><code>AT&amp;T</code></pre><p>Markdown 就会将它转为：</p>
+<pre><code>AT&amp;amp;T</code></pre><p>类似的状况也会发生在 <code>&lt;</code> 符号上，因为 Markdown 允许 <a href="#html">兼容 HTML</a> ，如果你是把 <code>&lt;</code> 符号作为 HTML 标签的定界符使用，那 Markdown 也不会对它做任何转换，但是如果你写：</p>
+<pre><code>4 &lt; 5</code></pre><p>Markdown 将会把它转换为：</p>
+<pre><code>4 &amp;lt; 5</code></pre><p>不过需要注意的是，code 范围内，不论是行内还是区块， <code>&lt;</code> 和 <code>&amp;</code> 两个符号都<em>一定</em>会被转换成 HTML 实体，这项特性让你可以很容易地用 Markdown 写 HTML code （和 HTML 相对而言， HTML 语法中，你要把所有的 <code>&lt;</code> 和 <code>&amp;</code> 都转换为 HTML 实体，才能在 HTML 文件里面写出 HTML code。）</p>
+<hr>
+<h2 id="-">区块元素</h2>
+<h3 id="-">段落和换行</h3>
+<p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进。</p>
+<p>「由一个或多个连续的文本行组成」这句话其实暗示了 Markdown 允许段落内的强迫换行（插入换行符），这个特性和其他大部分的 text-to-HTML 格式不一样（包括 Movable Type 的「Convert Line Breaks」选项），其它的格式会把每个换行符都转成 <code>&lt;br /&gt;</code> 标签。</p>
+<p>如果你<em>确实</em>想要依赖 Markdown 来插入 <code>&lt;br /&gt;</code> 标签的话，在插入处先按入两个以上的空格然后回车。</p>
+<p>的确，需要多费点事（多加空格）来产生 <code>&lt;br /&gt;</code> ，但是简单地「每个换行都转换为 <code>&lt;br /&gt;</code>」的方法在 Markdown 中并不适合， Markdown 中 email 式的 <a href="#blockquote">区块引用</a> 和多段落的 <a href="#list">列表</a> 在使用换行来排版的时候，不但更好用，还更方便阅读。</p>
+<h3 id="-">标题</h3>
+<p>Markdown 支持两种标题的语法，类 <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a> 和类 <a href="http://www.aaronsw.com/2002/atx/">atx</a> 形式。</p>
+<p>类 Setext 形式是用底线的形式，利用 <code>=</code> （最高阶标题）和 <code>-</code> （第二阶标题），例如：</p>
+<pre><code>This is an H1
+=============
+
+This is an H2
+-------------</code></pre><p>任何数量的 <code>=</code> 和 <code>-</code> 都可以有效果。</p>
+<p>类 Atx 形式则是在行首插入 1 到 6 个 <code>#</code> ，对应到标题 1 到 6 阶，例如：</p>
+<pre><code># 这是 H1
+
+## 这是 H2
+
+###### 这是 H6</code></pre><p>你可以选择性地「闭合」类 atx 样式的标题，这纯粹只是美观用的，若是觉得这样看起来比较舒适，你就可以在行尾加上 <code>#</code>，而行尾的 <code>#</code> 数量也不用和开头一样（行首的井字符数量决定标题的阶数）：</p>
+<pre><code># 这是 H1 #
+
+## 这是 H2 ##
+
+### 这是 H3 ######</code></pre><h3 id="-blockquotes">区块引用 Blockquotes</h3>
+<p>Markdown 标记区块引用是使用类似 email 中用 <code>&gt;</code> 的引用方式。如果你还熟悉在 email 信件中的引言部分，你就知道怎么在 Markdown 文件中建立一个区块引用，那会看起来像是你自己先断好行，然后在每行的最前面加上 <code>&gt;</code> ：</p>
+<pre><code>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+&gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+&gt;
+&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+&gt; id sem consectetuer libero luctus adipiscing.</code></pre><p>Markdown 也允许你偷懒只在整个段落的第一行最前面加上 <code>&gt;</code> ：</p>
+<pre><code>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+
+&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+id sem consectetuer libero luctus adipiscing.</code></pre><p>区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 <code>&gt;</code> ：</p>
+<pre><code>&gt; This is the first level of quoting.
+&gt;
+&gt; &gt; This is nested blockquote.
+&gt;
+&gt; Back to the first level.</code></pre><p>引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：</p>
+<pre><code>&gt; ## 这是一个标题。
+&gt;
+&gt; 1.   这是第一行列表项。
+&gt; 2.   这是第二行列表项。
+&gt;
+&gt; 给出一些例子代码：
+&gt;
+&gt;     return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre><p>任何像样的文本编辑器都能轻松地建立 email 型的引用。例如在 BBEdit 中，你可以选取文字后然后从选单中选择<em>增加引用阶层</em>。</p>
+<h3 id="-">列表</h3>
+<p>Markdown 支持有序列表和无序列表。</p>
+<p>无序列表使用星号、加号或是减号作为列表标记：</p>
+<pre><code>*   Red
+*   Green
+*   Blue</code></pre><p>等同于：</p>
+<pre><code>+   Red
++   Green
++   Blue</code></pre><p>也等同于：</p>
+<pre><code>-   Red
+-   Green
+-   Blue</code></pre><p>有序列表则使用数字接着一个英文句点：</p>
+<pre><code>1.  Bird
+2.  McHale
+3.  Parish</code></pre><p>很重要的一点是，你在列表标记上使用的数字并不会影响输出的 HTML 结果，上面的列表所产生的 HTML 标记为：</p>
+<pre><code>&lt;ol&gt;
+&lt;li&gt;Bird&lt;/li&gt;
+&lt;li&gt;McHale&lt;/li&gt;
+&lt;li&gt;Parish&lt;/li&gt;
+&lt;/ol&gt;</code></pre><p>如果你的列表标记写成：</p>
+<pre><code>1.  Bird
+1.  McHale
+1.  Parish</code></pre><p>或甚至是：</p>
+<pre><code>3. Bird
+1. McHale
+8. Parish</code></pre><p>你都会得到完全相同的 HTML 输出。重点在于，你可以让 Markdown 文件的列表数字和输出的结果相同，或是你懒一点，你可以完全不用在意数字的正确性。</p>
+<p>如果你使用懒惰的写法，建议第一个项目最好还是从 1. 开始，因为 Markdown 未来可能会支持有序列表的 start 属性。</p>
+<p>列表项目标记通常是放在最左边，但是其实也可以缩进，最多 3 个空格，项目标记后面则一定要接着至少一个空格或制表符。</p>
+<p>要让列表看起来更漂亮，你可以把内容用固定的缩进整理好：</p>
+<pre><code>*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+    viverra nec, fringilla in, laoreet vitae, risus.
+*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+    Suspendisse id sem consectetuer libero luctus adipiscing.</code></pre><p>但是如果你懒，那也行：</p>
+<pre><code>*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+viverra nec, fringilla in, laoreet vitae, risus.
+*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+Suspendisse id sem consectetuer libero luctus adipiscing.</code></pre><p>如果列表项目间用空行分开，在输出 HTML 时 Markdown 就会将项目内容用 <code>&lt;p&gt;</code>
+标签包起来，举例来说：</p>
+<pre><code>*   Bird
+*   Magic</code></pre><p>会被转换为：</p>
+<pre><code>&lt;ul&gt;
+&lt;li&gt;Bird&lt;/li&gt;
+&lt;li&gt;Magic&lt;/li&gt;
+&lt;/ul&gt;</code></pre><p>但是这个：</p>
+<pre><code>*   Bird
+
+*   Magic</code></pre><p>会被转换为：</p>
+<pre><code>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Bird&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Magic&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre><p>列表项目可以包含多个段落，每个项目下的段落都必须缩进 4 个空格或是 1 个制表符：</p>
+<pre><code>1.  This is a list item with two paragraphs. Lorem ipsum dolor
+    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
+    mi posuere lectus.
+
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
+    sit amet velit.
+
+2.  Suspendisse id sem consectetuer libero luctus adipiscing.</code></pre><p>如果你每行都有缩进，看起来会看好很多，当然，再次地，如果你很懒惰，Markdown 也允许：</p>
+<pre><code>*   This is a list item with two paragraphs.
+
+    This is the second paragraph in the list item. You&#39;re
+only required to indent the first line. Lorem ipsum dolor
+sit amet, consectetuer adipiscing elit.
+
+*   Another item in the same list.</code></pre><p>如果要在列表项目内放进引用，那 <code>&gt;</code> 就需要缩进：</p>
+<pre><code>*   A list item with a blockquote:
+
+    &gt; This is a blockquote
+    &gt; inside a list item.</code></pre><p>如果要放代码区块的话，该区块就需要缩进<em>两次</em>，也就是 8 个空格或是 2 个制表符：</p>
+<pre><code>*   一列表项包含一个列表区块：
+
+        &lt;代码写在这&gt;</code></pre><p>当然，项目列表很可能会不小心产生，像是下面这样的写法：</p>
+<pre><code>1986. What a great season.</code></pre><p>换句话说，也就是在行首出现<em>数字-句点-空白</em>，要避免这样的状况，你可以在句点前面加上反斜杠。</p>
+<pre><code>1986\. What a great season.</code></pre><h3 id="-">代码区块</h3>
+<p>和程序相关的写作或是标签语言原始码通常会有已经排版好的代码区块，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是照原来的样子显示，Markdown 会用 <code>&lt;pre&gt;</code> 和 <code>&lt;code&gt;</code> 标签来把代码区块包起来。</p>
+<p>要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以，例如，下面的输入：</p>
+<pre><code>这是一个普通段落：
+
+    这是一个代码区块。</code></pre><p>Markdown 会转换成：</p>
+<pre><code>&lt;p&gt;这是一个普通段落：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;这是一个代码区块。
+&lt;/code&gt;&lt;/pre&gt;</code></pre><p>这个每行一阶的缩进（4 个空格或是 1 个制表符），都会被移除，例如：</p>
+<pre><code>Here is an example of AppleScript:
+
+    tell application &quot;Foo&quot;
+        beep
+    end tell</code></pre><p>会被转换为：</p>
+<pre><code>&lt;p&gt;Here is an example of AppleScript:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tell application &quot;Foo&quot;
+    beep
+end tell
+&lt;/code&gt;&lt;/pre&gt;</code></pre><p>一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。</p>
+<p>在代码区块里面， <code>&amp;</code> 、 <code>&lt;</code> 和 <code>&gt;</code> 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，再加上缩进就可以了，剩下的 Markdown 都会帮你处理，例如：</p>
+<pre><code>    &lt;div class=&quot;footer&quot;&gt;
+        &amp;copy; 2004 Foo Corporation
+    &lt;/div&gt;</code></pre><p>会被转换为：</p>
+<pre><code>&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;footer&quot;&amp;gt;
+    &amp;amp;copy; 2004 Foo Corporation
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;</code></pre><p>代码区块中，一般的 Markdown 语法不会被转换，像是星号便只是星号，这表示你可以很容易地以 Markdown 语法撰写 Markdown 语法相关的文件。</p>
+<p>虽然上面直接缩进 4 个空格就能得到代码块，但如果想要特定于语言的语法高亮，就不能直接缩进，而是使用 3 个以上的反引号（`） 包裹起来并告诉 markdown 解析器你需要什么语言的语法高亮。</p>
+<p>例如：</p>
+<pre><code class="language-md">```js
+function foo() {
+  return {
+    name: &#39;灵梦&#39;,
+    age: 17,
+    sex: false
+  }
+}
+```</code></pre>
+<p>会被显示为</p>
+<pre><code class="language-js">function foo() {
+  return {
+    name: &#39;灵梦&#39;,
+    age: 17,
+    sex: false
+  }
+}</code></pre>
+<p>在代码显示上会有相当的优势，还是希望尽量使用 ``` 而非缩进 4 个空格。</p>
+<h3 id="-">分隔线</h3>
+<p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
+<pre><code>* * *
+
+***
+
+*****
+
+- - -
+
+---------------------------------------</code></pre><hr>
+<h2 id="-">区段元素</h2>
+<h3 id="-">链接</h3>
+<p>Markdown 支持两种形式的链接语法： <em>行内式</em>和<em>参考式</em>两种形式。</p>
+<p>不管是哪一种，链接文字都是用 [方括号] 来标记。</p>
+<p>要建立一个<em>行内式</em>的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：</p>
+<pre><code>This is [an example](http://example.com/ &quot;Title&quot;) inline link.
+
+[This link](http://example.net/) has no title attribute.</code></pre><p>会产生：</p>
+<pre><code>&lt;p&gt;This is &lt;a href=&quot;http://example.com/&quot; title=&quot;Title&quot;&gt;
+an example&lt;/a&gt; inline link.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://example.net/&quot;&gt;This link&lt;/a&gt; has no
+title attribute.&lt;/p&gt;</code></pre><p>如果你是要链接到同样主机的资源，你可以使用相对路径：</p>
+<pre><code>See my [About](/about/) page for details.</code></pre><p><em>参考式</em>的链接是在链接文字的括号后面再接上另一个方括号，而在第二个方括号里面要填入用以辨识链接的标记：</p>
+<pre><code>This is [an example][id] reference-style link.</code></pre><p>你也可以选择性地在两个方括号中间加上一个空格：</p>
+<pre><code>This is [an example] [id] reference-style link.</code></pre><p>接着，在文件的任意处，你可以把这个标记的链接内容定义出来：</p>
+<pre><code>[id]: http://example.com/  &quot;Optional Title Here&quot;</code></pre><p>链接内容定义的形式为：</p>
+<ul>
+<li>方括号（前面可以选择性地加上至多三个空格来缩进），里面输入链接文字</li>
+<li>接着一个冒号</li>
+<li>接着一个以上的空格或制表符</li>
+<li>接着链接的网址</li>
+<li>选择性地接着 title 内容，可以用单引号、双引号或是括弧包着</li>
+</ul>
+<p>下面这三种链接的定义都是相同：</p>
+<pre><code>[foo]: http://example.com/  &quot;Optional Title Here&quot;
+[foo]: http://example.com/  &#39;Optional Title Here&#39;
+[foo]: http://example.com/  (Optional Title Here)</code></pre><p><strong>请注意：</strong>有一个已知的问题是 Markdown.pl 1.0.1 会忽略单引号包起来的链接 title。</p>
+<p>链接网址也可以用尖括号包起来：</p>
+<pre><code>[id]: &lt;http://example.com/&gt;  &quot;Optional Title Here&quot;</code></pre><p>你也可以把 title 属性放到下一行，也可以加一些缩进，若网址太长的话，这样会比较好看：</p>
+<pre><code>[id]: http://example.com/longish/path/to/resource/here
+    &quot;Optional Title Here&quot;</code></pre><p>网址定义只有在产生链接的时候用到，并不会直接出现在文件之中。</p>
+<p>链接辨别标签可以有字母、数字、空白和标点符号，但是并<em>不</em>区分大小写，因此下面两个链接是一样的：</p>
+<pre><code>[link text][a]
+[link text][A]</code></pre><p><em>隐式链接标记</em>功能让你可以省略指定链接标记，这种情形下，链接标记会视为等同于链接文字，要用隐式链接标记只要在链接文字后面加上一个空的方括号，如果你要让 &quot;Google&quot; 链接到 google.com，你可以简化成：</p>
+<pre><code>[Google][]</code></pre><p>然后定义链接内容：</p>
+<pre><code>[Google]: http://google.com/</code></pre><p>由于链接文字可能包含空白，所以这种简化型的标记内也许包含多个单词：</p>
+<pre><code>Visit [Daring Fireball][] for more information.</code></pre><p>然后接着定义链接：</p>
+<pre><code>[Daring Fireball]: http://daringfireball.net/</code></pre><p>链接的定义可以放在文件中的任何一个地方，我比较偏好直接放在链接出现段落的后面，你也可以把它放在文件最后面，就像是注解一样。</p>
+<p>下面是一个参考式链接的范例：</p>
+<pre><code>I get 10 times more traffic from [Google] [1] than from
+[Yahoo] [2] or [MSN] [3].
+
+  [1]: http://google.com/        &quot;Google&quot;
+  [2]: http://search.yahoo.com/  &quot;Yahoo Search&quot;
+  [3]: http://search.msn.com/    &quot;MSN Search&quot;</code></pre><p>如果改成用链接名称的方式写：</p>
+<pre><code>I get 10 times more traffic from [Google][] than from
+[Yahoo][] or [MSN][].
+
+  [google]: http://google.com/        &quot;Google&quot;
+  [yahoo]:  http://search.yahoo.com/  &quot;Yahoo Search&quot;
+  [msn]:    http://search.msn.com/    &quot;MSN Search&quot;</code></pre><p>上面两种写法都会产生下面的 HTML。</p>
+<pre><code>&lt;p&gt;I get 10 times more traffic from &lt;a href=&quot;http://google.com/&quot;
+title=&quot;Google&quot;&gt;Google&lt;/a&gt; than from
+&lt;a href=&quot;http://search.yahoo.com/&quot; title=&quot;Yahoo Search&quot;&gt;Yahoo&lt;/a&gt;
+or &lt;a href=&quot;http://search.msn.com/&quot; title=&quot;MSN Search&quot;&gt;MSN&lt;/a&gt;.&lt;/p&gt;</code></pre><p>下面是用行内式写的同样一段内容的 Markdown 文件，提供作为比较之用：</p>
+<pre><code>I get 10 times more traffic from [Google](http://google.com/ &quot;Google&quot;)
+than from [Yahoo](http://search.yahoo.com/ &quot;Yahoo Search&quot;) or
+[MSN](http://search.msn.com/ &quot;MSN Search&quot;).</code></pre><p>参考式的链接其实重点不在于它比较好写，而是它比较好读，比较一下上面的范例，使用参考式的文章本身只有 81 个字符，但是用行内形式的却会增加到 176 个字元，如果是用纯 HTML 格式来写，会有 234 个字元，在 HTML 格式中，标签比文本还要多。</p>
+<p>使用 Markdown 的参考式链接，可以让文件更像是浏览器最后产生的结果，让你可以把一些标记相关的元数据移到段落文字之外，你就可以增加链接而不让文章的阅读感觉被打断。</p>
+<h3 id="-">强调</h3>
+<p>Markdown 使用星号（<code>*</code>）和底线（<code>_</code>）作为标记强调字词的符号，被 <code>*</code> 或 <code>_</code> 包围的字词会被转成用 <code>&lt;em&gt;</code> 标签包围，用两个 <code>*</code> 或 <code>_</code> 包起来的话，则会被转成 <code>&lt;strong&gt;</code>，例如：</p>
+<pre><code>*single asterisks*
+
+_single underscores_
+
+**double asterisks**
+
+__double underscores__</code></pre><p>会转成：</p>
+<pre><code>&lt;em&gt;single asterisks&lt;/em&gt;
+
+&lt;em&gt;single underscores&lt;/em&gt;
+
+&lt;strong&gt;double asterisks&lt;/strong&gt;
+
+&lt;strong&gt;double underscores&lt;/strong&gt;</code></pre><p>你可以随便用你喜欢的样式，唯一的限制是，你用什么符号开启标签，就要用什么符号结束。</p>
+<p>强调也可以直接插在文字中间：</p>
+<pre><code>un*frigging*believable</code></pre><p>但是<strong>如果你的 <code>*</code> 和 <code>_</code> 两边都有空白的话，它们就只会被当成普通的符号</strong>。</p>
+<p>如果要在文字前后直接插入普通的星号或底线，你可以用反斜线：</p>
+<pre><code>\*this text is surrounded by literal asterisks\*</code></pre><h3 id="-">删除</h3>
+<p>Markdown 可以在一行中用两个 (<del>\</del>) 符号 包裹一段文字，会被转成 <code>&lt;del&gt;</code> 包裹起来的内容，显示为 <del>删除</del>。</p>
+<p>例如：</p>
+<pre><code>~~删除~~</code></pre><p>会转成：</p>
+<pre><code>&lt;del&gt;删除&lt;/del&gt;</code></pre><p>如果需要连续使用两个 ~ 符号，则可以使用反斜线：</p>
+<pre><code>~\~删除~\~</code></pre><h3 id="-">代码</h3>
+<p>如果要标记一小段行内代码，你可以用反引号把它包起来（<code>`</code>），例如：</p>
+<pre><code>Use the `printf()` function.</code></pre><p>会产生：</p>
+<pre><code>&lt;p&gt;Use the &lt;code&gt;printf()&lt;/code&gt; function.&lt;/p&gt;</code></pre><p>如果要在代码区段内插入反引号，你可以用多个反引号来开启和结束代码区段：</p>
+<pre><code>``There is a literal backtick (`) here.``</code></pre><p>这段语法会产生：</p>
+<pre><code>&lt;p&gt;&lt;code&gt;There is a literal backtick (`) here.&lt;/code&gt;&lt;/p&gt;</code></pre><p>代码区段的起始和结束端都可以放入一个空白，起始端后面一个，结束端前面一个，这样你就可以在区段的一开始就插入反引号：</p>
+<pre><code>A single backtick in a code span: `` ` ``
+
+A backtick-delimited string in a code span: `` `foo` ``</code></pre><p>会产生：</p>
+<pre><code>&lt;p&gt;A single backtick in a code span: &lt;code&gt;`&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;A backtick-delimited string in a code span: &lt;code&gt;`foo`&lt;/code&gt;&lt;/p&gt;</code></pre><p>在代码区段内，<code>&amp;</code> 和尖括号<strong>都</strong>会被自动地转成 HTML 实体，这使得插入 HTML 原始码变得很容易，Markdown 会把下面这段：</p>
+<pre><code>Please don&#39;t use any `&lt;blink&gt;` tags.</code></pre><p>转为：</p>
+<pre><code>&lt;p&gt;Please don&#39;t use any &lt;code&gt;&amp;lt;blink&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;</code></pre><p>你也可以这样写：</p>
+<pre><code>`&amp;#8212;` is the decimal-encoded equivalent of `&amp;mdash;`.</code></pre><p>以产生：</p>
+<pre><code>&lt;p&gt;&lt;code&gt;&amp;amp;#8212;&lt;/code&gt; is the decimal-encoded
+equivalent of &lt;code&gt;&amp;amp;mdash;&lt;/code&gt;.&lt;/p&gt;</code></pre><h3 id="-">图片</h3>
+<p>很明显地，要在纯文字应用中设计一个「自然」的语法来插入图片是有一定难度的。</p>
+<p>Markdown 使用一种和链接很相似的语法来标记图片，同样也允许两种样式： <em>行内式</em>和<em>参考式</em>。</p>
+<p>行内式的图片语法看起来像是：</p>
+<pre><code>![Alt text](/path/to/img.jpg)
+
+![Alt text](/path/to/img.jpg &quot;Optional title&quot;)</code></pre><p>详细叙述如下：</p>
+<ul>
+<li>一个惊叹号 <code>!</code></li>
+<li>接着一个方括号，里面放上图片的替代文字</li>
+<li>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上
+选择性的 &#39;title&#39; 文字。</li>
+</ul>
+<p>参考式的图片语法则长得像这样：</p>
+<pre><code>![Alt text][id]</code></pre><p>「id」是图片参考的名称，图片参考的定义方式则和连结参考一样：</p>
+<pre><code>[id]: url/to/image  &quot;Optional title attribute&quot;</code></pre><p>到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的 <code>&lt;img&gt;</code> 标签。</p>
+<hr>
+<h2 id="-">其它</h2>
+<h3 id="-">自动链接</h3>
+<p>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用尖括号包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：</p>
+<pre><code>&lt;http://example.com/&gt;</code></pre><p>Markdown 会转为：</p>
+<pre><code>&lt;a href=&quot;http://example.com/&quot;&gt;http://example.com/&lt;/a&gt;</code></pre><p>邮址的自动链接也很类似，只是 Markdown 会先做一个编码转换的过程，把文字字符转成 16 进位码的 HTML 实体，这样的格式可以糊弄一些不好的邮址收集机器人，例如：</p>
+<pre><code>&lt;address@example.com&gt;</code></pre><p>Markdown 会转成：</p>
+<pre><code>&lt;a href=&quot;&amp;#x6D;&amp;#x61;i&amp;#x6C;&amp;#x74;&amp;#x6F;:&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;
+&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;
+&amp;#109;&quot;&gt;&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;
+&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;</code></pre><p>在浏览器里面，这段字串（其实是 <code>&lt;a href=&quot;mailto:address@example.com&quot;&gt;address@example.com&lt;/a&gt;</code>）会变成一个可以点击的「<a href="mailto:address@example.com">address@example.com</a>」链接。</p>
+<p>（这种作法虽然可以糊弄不少的机器人，但并不能全部挡下来，不过总比什么都不做好些。不管怎样，公开你的信箱终究会引来广告信件的。）</p>
+<h3 id="-">反斜杠</h3>
+<p>Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 <code>&lt;em&gt;</code> 标签），你可以在星号的前面加上反斜杠：</p>
+<pre><code>\*literal asterisks\*</code></pre><p>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</p>
+<pre><code>\   反斜线
+`   反引号
+*   星号
+_   底线
+{}  花括号
+[]  方括号
+()  括弧
+#   井字号
++   加号
+-   减号
+.   英文句点
+!   惊叹号</code></pre><hr>
+<h2 id="markdown-">Markdown 免费编辑器</h2>
+<blockquote>
+<p>如果你是一名 Developer，那吾辈首推 <a href="https://code.visualstudio.com/">VSCode</a>。</p>
+</blockquote>
+<p>Windows 平台</p>
+<ul>
+<li><a href="http://markdownpad.com/">MarkdownPad</a></li>
+<li><a href="http://code52.org/DownmarkerWPF/">MarkPad</a></li>
+</ul>
+<p>Linux 平台</p>
+<ul>
+<li><a href="http://sourceforge.net/p/retext/home/ReText/">ReText</a></li>
+</ul>
+<p>Mac 平台</p>
+<ul>
+<li><a href="http://mouapp.com/">Mou</a></li>
+</ul>
+<p>在线编辑器</p>
+<ul>
+<li><a href="http://dillinger.io/">Dillinger.io</a></li>
+</ul>
+<p>浏览器插件</p>
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/oknndfeeopgpibecfjljjfanledpbkog">MaDe</a> (Chrome)</li>
+</ul>
+<p>高级应用</p>
+<ul>
+<li><a href="https://code.visualstudio.com/">VSCode</a> + <a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown All in One</a></li>
+<li><a href="http://www.sublimetext.com/2">Sublime Text 2</a> + <a href="http://ttscoff.github.com/MarkdownEditing/">MarkdownEditing</a> / <a href="http://lucifr.com/2012/07/12/markdownediting-for-sublime-text-2/">教程</a></li>
+</ul>
