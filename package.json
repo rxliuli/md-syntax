@@ -4,7 +4,8 @@
   "description": "markdown 语法说明",
   "main": "index.js",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "deploy": "yarn build && copy CNAME dist && gh-pages -d dist && rimraf dist"
   },
   "keywords": [
     "rxliuli",
@@ -15,5 +16,10 @@
   "license": "ISC",
   "dependencies": {
     "marked": "^0.5.2"
+  },
+  "devDependencies": {
+    "copy": "^0.3.2",
+    "gh-pages": "^2.0.1",
+    "rimraf": "^2.6.3"
   }
 }
